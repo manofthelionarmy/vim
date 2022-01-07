@@ -161,7 +161,7 @@ vnoremap K :m '<-2<CR>gv=gv
  command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 
 nnoremap <silent> <leader>tt :FZF<CR>
-nnoremap <silent> <leader>tc :FZF ~/Desktop/workspace/myvim/<CR>
+nnoremap <silent> <leader>tc :FZF ~/.vim/<CR>
 nnoremap <silent> <leader>tl :RG<CR>
 nnoremap <silent> <leader>tbb :Buffers<CR>
 nnoremap <silent> <leader>bt :BTags<CR>
