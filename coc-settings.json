@@ -1,0 +1,19 @@
+{
+  "go.goplsOptions": {
+    "completeUnimported": true
+  },
+  "go.goplsPath": "~/go/bin/gopls",
+  "diagnostic.checkCurrentLine": false,
+  "diagnostic.virtualText": true,
+  "diagnostic.enable": true,
+  "diagnostic.displayByAle": true,
+  "coc.preferences.formatOnType": true,
+  "coc.preferences.formatOnSaveFiletypes": ["*"],
+  "coc.preferences.bracketEnterImprove": true,
+  "suggest.enablePreselect": true,
+  "suggest.enablePreview": true,
+  "suggest.detailField": "preview",
+  "suggest.floatEnable": true,
+  "suggest.minTriggerInputLength": 2,
+  "hover.previewMaxHeight": 10
+}
