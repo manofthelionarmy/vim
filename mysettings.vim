@@ -49,6 +49,7 @@ let g:airline#extensions#hunks#hunk_symbols = [' ', '柳', ' ']
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_splits = 1
 let g:airline_symbols = {'branch': ' ', 'dirty': ''}
+let g:airline_symbols.notexists = ''
 
 function! AirlineInit()
   let g:airline_section_a = airline#section#create(['mode'])
@@ -182,3 +183,48 @@ nnoremap k kzz
 nnoremap G Gzz
 nnoremap g; g;zz
 nnoremap g, g,zz
+
+" Remap shift
+vnoremap > >gv
+vnoremap < <gv
+
+
+" Startify
+" let g:startify_custom_header = "hello"
+let g:startify_custom_header_quotes = [
+      \ ["Suckin' at something is the first step towards bein' sorta good at something", "",  "- Jake the Dog, Adventure Time"],
+      \ ]
+
+" Escape terminal
+nnoremap <silent> <C-t> :vert terminal<CR>
+" Go to the left while in terminal mode
+tnoremap <silent> <C-h> <C-w>h
+
+function! s:gitModified()
+    let files = systemlist('git ls-files -m 2>/dev/null')
+    return map(files, "{'line': v:val, 'path': v:val}")
+endfunction
+
+" same as above, but show untracked files, honouring .gitignore
+function! s:gitUntracked()
+    let files = systemlist('git ls-files -o --exclude-standard 2>/dev/null')
+    return map(files, "{'line': v:val, 'path': v:val}")
+endfunction
+
+function! s:configs()
+  execute "normal! :Files ~/.vim<CR>"
+endfunction
+
+let g:startify_commands = [
+    \ [' Configs',':FZF ~/.vim'],
+    \ [' Files',':Files']
+    \ ]
+
+let g:startify_lists = [
+        \ { 'type': 'dir',       'header': ['    CurrDir '. getcwd()] },
+        \ { 'type': 'files',     'header': ['    Recently Used Files']            },
+        \ { 'type': function('s:gitModified'),  'header': ['    Git modified']},
+        \ { 'type': function('s:gitUntracked'), 'header': ['    Git untracked']},
+        \ { 'type': function('s:configs'), 'header': ['    Configs']},
+        \ { 'type': 'commands', 'header': ['    Commands']},
+        \]

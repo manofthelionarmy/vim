@@ -10,7 +10,7 @@ Plug 'antoinemadec/FixCursorHold.nvim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sensible'
-" Plug 'sheerun/vim-polyglot', {'for': ['go']}
+Plug 'sheerun/vim-polyglot'
 Plug 'airblade/vim-gitgutter'
 Plug 'dense-analysis/ale'
 " Go 
@@ -40,6 +40,7 @@ Plug 'MaxMEllon/vim-jsx-pretty', {'for':['javascript', 'javascriptreact']}
 " Fzzy finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'mhinz/vim-startify'
 " Airline already has this feature
 " Plug 'ap/vim-buftabline'
 " Plug 'Yggdroot/indentLine'
