@@ -189,16 +189,19 @@ vnoremap > >gv
 vnoremap < <gv
 
 
-" Startify
-" let g:startify_custom_header = "hello"
-let g:startify_custom_header_quotes = [
-      \ ["Suckin' at something is the first step towards bein' sorta good at something", "",  "- Jake the Dog, Adventure Time"],
-      \ ]
 
 " Escape terminal
 nnoremap <silent> <C-t> :vert terminal<CR>
 " Go to the left while in terminal mode
 tnoremap <silent> <C-h> <C-w>h
+
+" Startify
+let g:startify_custom_header_quotes = [
+      \ ["Suckin' at something is the first step towards bein' sorta good at something", 
+        \ "",  
+        \ "- Jake the Dog, Adventure Time"
+        \],
+      \ ]
 
 function! s:gitModified()
     let files = systemlist('git ls-files -m 2>/dev/null')
@@ -211,20 +214,17 @@ function! s:gitUntracked()
     return map(files, "{'line': v:val, 'path': v:val}")
 endfunction
 
-function! s:configs()
-  execute "normal! :Files ~/.vim<CR>"
-endfunction
-
 let g:startify_commands = [
-    \ [' Configs',':FZF ~/.vim'],
-    \ [' Files',':Files']
+    \ [' Find File',':Files'],
+    \ [' Search',':Rg'],
+    \ [' Recently Used Files',':History'],
+    \ [' Configs',':FZF ~/.vim'],
     \ ]
 
 let g:startify_lists = [
+        \ { 'type': 'commands', 'header': ['    Commands']},
         \ { 'type': 'dir',       'header': ['    CurrDir '. getcwd()] },
         \ { 'type': 'files',     'header': ['    Recently Used Files']            },
         \ { 'type': function('s:gitModified'),  'header': ['    Git modified']},
         \ { 'type': function('s:gitUntracked'), 'header': ['    Git untracked']},
-        \ { 'type': function('s:configs'), 'header': ['    Configs']},
-        \ { 'type': 'commands', 'header': ['    Commands']},
         \]
