@@ -5,9 +5,6 @@ endif
  
 " For dark version.
 set background=dark
-" Set contrast.
-" This configuration option should be placed before `colorscheme everforest`.
-" Available values: 'hard', 'medium'(default), 'soft'
 colorscheme gruvbox
 " Transparent background
 hi Normal guibg=NONE ctermbg=NONE
@@ -170,6 +167,9 @@ function! RipgrepFzf(query, fullscreen)
 endfunction
 
 command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
+" FZF complete path, from https://github.com/junegunn/fzf.vim#mappings
+" Go to link under cursror with gx
+imap <C-x><C-f> <plug>(fzf-complete-path)
 
 nnoremap <silent> <leader>tt :FZF<CR>
 nnoremap <silent> <leader>tc :FZF ~/.vim/<CR>
@@ -252,7 +252,7 @@ let g:startify_lists = [
 
 " Vimspector
 let g:vimspector_enable_mappings = 'HUMAN'
-" let g:vimspector_sidebar_width = 10
+let g:vimspector_sidebar_width = 10
 " let g:vimspector_bottombar_height = 0
 " Will install debugging 'gadget' in this directory
 " make sure to create a symbolic link with vimspector.json
@@ -274,3 +274,11 @@ augroup EditVim
   autocmd BufWritePost .vimrc source $.vimrc
   autocmd FileType vim setlocal foldmethod=marker
 augroup END
+
+"GitGutter
+nnoremap <silent> <leader>g; :GitGutterPrevHunk<CR>
+nnoremap <silent> <leader>g, :GitGutterNextHunk<CR>
+nnoremap <silent> <leader>gu :GitGutterUndoHunk<CR>
+" Fold non-changes and show all of my current changes. Hit the keys again to
+" unfold
+nnoremap <silent> <leader>gf :GitGutterFold<CR>

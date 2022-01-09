@@ -11,11 +11,14 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sensible'
 " doesn't support lazy loading :(
-Plug 'sheerun/vim-polyglot'
+" Plug 'sheerun/vim-polyglot'
 Plug 'airblade/vim-gitgutter'
 Plug 'dense-analysis/ale'
 " Go 
 Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries', 'for': 'go', 'tag': 'v1.25'}
+"Dev icons
+Plug 'ryanoasis/vim-devicons' "also used by NerdTree
+
 " NerdTree and Plugins
 Plug 'preservim/nerdtree'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -26,7 +29,6 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'morhetz/gruvbox'
 " Appearance
 Plug 'vim-airline/vim-airline'
-Plug 'ryanoasis/vim-devicons' "also used by NerdTree
 " -- Etc
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'alvan/vim-closetag', {'for': ['javascript', 'markdown']}
