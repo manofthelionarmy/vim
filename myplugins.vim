@@ -10,6 +10,7 @@ Plug 'antoinemadec/FixCursorHold.nvim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sensible'
+" doesn't support lazy loading :(
 Plug 'sheerun/vim-polyglot'
 Plug 'airblade/vim-gitgutter'
 Plug 'dense-analysis/ale'
@@ -29,7 +30,7 @@ Plug 'ryanoasis/vim-devicons' "also used by NerdTree
 " -- Etc
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'alvan/vim-closetag', {'for': ['javascript', 'markdown']}
-Plug 'mattn/emmet-vim', {'for': ['javascript', 'markdown']}
+Plug 'mattn/emmet-vim', {'for': ['markdown']}
 Plug 'jiangmiao/auto-pairs'
 
 " Javascript, JSX
@@ -43,10 +44,10 @@ Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-startify'
 Plug 'puremourning/vimspector'
 " Airline already has this feature
-" Plug 'ap/vim-buftabline'
 " Plug 'Yggdroot/indentLine'
 " Learn how to utilize sessions one day
 " Plug 'tpope/vim-obsession'
+" Debugging :)
 Plug 'puremourning/vimspector', {'for': ['javascript']}
 call plug#end()
 
