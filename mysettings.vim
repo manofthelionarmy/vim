@@ -64,6 +64,7 @@ function! AirlineInit()
 endfunction
 
 augroup mycustom_ariline
+  autocmd!
   autocmd User AirlineAfterInit call AirlineInit()
 augroup END
 
@@ -71,10 +72,11 @@ let NERDTreeShowHidden=1
 
 "Rainbow Parenthesis
 augroup toggling_rainbow_highlight
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+  autocmd!
+  au VimEnter * RainbowParenthesesToggle
+  au Syntax * RainbowParenthesesLoadRound
+  au Syntax * RainbowParenthesesLoadSquare
+  au Syntax * RainbowParenthesesLoadBraces
 augroup END
 " Some stuff to have to make sure that vim-go plays nice with coc-vim
 let g:go_def_mapping_enabled = 0
@@ -174,6 +176,7 @@ nnoremap <silent> <leader>tbb :Buffers<CR>
 nnoremap <silent> <leader>bt :BTags<CR>
 
 augroup lcd_to_path
+  autocmd!
   autocmd BufEnter * silent! lcd %:h:p
 augroup END
 
