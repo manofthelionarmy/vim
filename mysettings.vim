@@ -232,15 +232,18 @@ let g:startify_lists = [
         \ { 'type': function('s:gitUntracked'), 'header': ['    Git Untracked']},
         \]
 
-let g:indentLine_char_list = ['┆', '▏']
-" let g:indentLine_char_list = ['|', '¦', '┆', '┊']
-let g:indentLine_fileTypeExclude = ['startify']
-let g:indentLine_setColors = 0
+" not sure if it adds extra overhead on highlighting
+" let g:indentLine_char_list = ['┆', '▏']
+" " let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+" let g:indentLine_fileTypeExclude = ['startify']
+" let g:indentLine_setColors = 0
 
-" vimspector
+" Vimspector
 let g:vimspector_enable_mappings = 'HUMAN'
-let g:vimspector_sidebar_width = 10
-let g:vimspector_bottombar_height = 0
+" let g:vimspector_sidebar_width = 10
+" let g:vimspector_bottombar_height = 0
+" Will install debugging 'gadget' in this directory
+" make sure to create a symbolic link with vimspector.json
 let g:vimspector_base_dir=expand( '$HOME/.config/vimspector-config' )
 nnoremap <Leader>dd :call vimspector#Launch()<CR>
 nnoremap <Leader>de :call vimspector#Reset()<CR>
