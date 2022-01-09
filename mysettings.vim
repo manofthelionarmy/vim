@@ -57,9 +57,9 @@ function! AirlineInit()
   let g:airline_section_b = airline#section#create(['branch','   %t'])
   let g:airline_section_c = airline#section#create(['hunks'])
   " TODO: change these?
-  " let g:airline_section_x = airline#section#create(['tagbar', 'filetype', 'virtualenv'])
-  " let g:airline_section_y = airline#section#create(['fileencoding', 'fileformat', 'bom', 'eol'])
-  " let g:airline_section_z = airline#section#create([' ', ' '])
+  " let g:airline_section_x = airline#section#create(['filetype'])
+  " let g:airline_section_y = airline#section#create(['fileencoding', 'fileformat'])
+  " let g:airline_section_z = airline#section#create(['percentage%', 'linenumber', 'columnnumber'])
 endfunction
 
 augroup mycustom_ariline
