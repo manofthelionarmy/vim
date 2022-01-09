@@ -62,15 +62,20 @@ function! AirlineInit()
   " let g:airline_section_y = airline#section#create([' ', ' ', ' '])
   " let g:airline_section_z = airline#section#create([' ', ' '])
 endfunction
-autocmd User AirlineAfterInit call AirlineInit()
+
+augroup mycustom_ariline
+  autocmd User AirlineAfterInit call AirlineInit()
+augroup END
 
 let NERDTreeShowHidden=1
 
 "Rainbow Parenthesis
+augroup toggling_rainbow_highlight
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
+augroup END
 " Some stuff to have to make sure that vim-go plays nice with coc-vim
 let g:go_def_mapping_enabled = 0
 let g:go_code_completion_enabled=0
@@ -168,7 +173,9 @@ nnoremap <silent> <leader>tl :RG<CR>
 nnoremap <silent> <leader>tbb :Buffers<CR>
 nnoremap <silent> <leader>bt :BTags<CR>
 
-autocmd BufEnter * silent! lcd %:h:p
+augroup lcd_to_path
+  autocmd BufEnter * silent! lcd %:h:p
+augroup END
 
 " Shift airline tabs
 nnoremap <silent> <S-l> :bnext<CR>
@@ -256,3 +263,9 @@ nmap <Leader>dk <Plug>VimspectorRestart
 nmap <Leader>dh <Plug>VimspectorStepOut
 nmap <Leader>dl <Plug>VimspectorStepInto
 nmap <Leader>dj <Plug>VimspectorStepOver
+
+augroup EditVim
+  autocmd!
+  autocmd BufWritePost .vimrc source $.vimrc
+  autocmd FileType vim setlocal foldmethod=marker
+augroup END
