@@ -41,8 +41,12 @@ Plug 'MaxMEllon/vim-jsx-pretty', {'for':['javascript', 'javascriptreact']}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-startify'
+Plug 'puremourning/vimspector'
 " Airline already has this feature
 " Plug 'ap/vim-buftabline'
 " Plug 'Yggdroot/indentLine'
+" Learn how to utilize sessions one day
+" Plug 'tpope/vim-obsession'
+Plug 'puremourning/vimspector', {'for': ['javascript']}
 call plug#end()
 

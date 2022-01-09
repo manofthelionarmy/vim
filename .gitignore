@@ -2,3 +2,5 @@ autoload/
 plugged/
 UltiSnips/
 view/
+session/
+Session.vim

@@ -48,8 +48,9 @@ let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#hunks#hunk_symbols = [' ', '柳', ' ']
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_splits = 1
-let g:airline_symbols = {'branch': ' ', 'dirty': ''}
-let g:airline_symbols.notexists = ''
+let g:airline#extensions#obsession#enabled = 1
+let g:airline_symbols = {'branch': ' ', 'dirty': '', 'notexists': ''}
+" let g:airline_symbols.notexists = ''
 
 function! AirlineInit()
   let g:airline_section_a = airline#section#create(['mode'])
@@ -148,18 +149,18 @@ vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
 " FZF and RG :)
- let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
- let $FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --layout reverse --margin=1,4 --preview 'bat --theme=TwoDark --color=always --style=header,grid --line-range :300 {}'"
- 
- function! RipgrepFzf(query, fullscreen)
-   let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case --glob "!node_modules/" -g "!vendors/" -g "!.git/" -- %s || true'
-   let initial_command = printf(command_fmt, shellescape(a:query))
-   let reload_command = printf(command_fmt, '{q}')
-   let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
-   call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
- endfunction
- 
- command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
+let $FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --layout reverse --margin=1,4 --preview 'bat --theme=TwoDark --color=always --style=header,grid --line-range :300 {}'"
+
+function! RipgrepFzf(query, fullscreen)
+  let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case --glob "!node_modules/" -g "!vendors/" -g "!.git/" -- %s || true'
+  let initial_command = printf(command_fmt, shellescape(a:query))
+  let reload_command = printf(command_fmt, '{q}')
+  let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+endfunction
+
+command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 
 nnoremap <silent> <leader>tt :FZF<CR>
 nnoremap <silent> <leader>tc :FZF ~/.vim/<CR>
@@ -167,7 +168,6 @@ nnoremap <silent> <leader>tl :RG<CR>
 nnoremap <silent> <leader>tbb :Buffers<CR>
 nnoremap <silent> <leader>bt :BTags<CR>
 
- 
 autocmd BufEnter * silent! lcd %:h:p
 
 " Shift airline tabs
@@ -188,12 +188,14 @@ nnoremap g, g,zz
 vnoremap > >gv
 vnoremap < <gv
 
-
-
 " Escape terminal
 nnoremap <silent> <C-t> :vert terminal<CR>
 " Go to the left while in terminal mode
 tnoremap <silent> <C-h> <C-w>h
+
+function! StartifyEntryFormat()
+    return 'WebDevIconsGetFileTypeSymbol(absolute_path) ." ". entry_path'
+endfunction
 
 " Startify
 let g:startify_custom_header_quotes = [
@@ -216,15 +218,38 @@ endfunction
 
 let g:startify_commands = [
     \ [' Find File',':Files'],
-    \ [' Search',':Rg'],
+    \ [' Search',':Rg'],
     \ [' Recently Used Files',':History'],
     \ [' Configs',':FZF ~/.vim'],
     \ ]
 
 let g:startify_lists = [
-        \ { 'type': 'commands', 'header': ['    Commands']},
+        \ { 'type': 'commands',  'header': ['    Commands']},
         \ { 'type': 'dir',       'header': ['    CurrDir '. getcwd()] },
-        \ { 'type': 'files',     'header': ['    Recently Used Files']            },
-        \ { 'type': function('s:gitModified'),  'header': ['    Git modified']},
-        \ { 'type': function('s:gitUntracked'), 'header': ['    Git untracked']},
+        \ { 'type': 'files',     'header': ['    Recently Used Files']},
+        \ { 'type': 'sessions',  'header': ['    Sessions']            },
+        \ { 'type': function('s:gitModified'),  'header': ['    Git Modified']},
+        \ { 'type': function('s:gitUntracked'), 'header': ['    Git Untracked']},
         \]
+
+let g:indentLine_char_list = ['┆', '▏']
+" let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:indentLine_fileTypeExclude = ['startify']
+let g:indentLine_setColors = 0
+
+" vimspector
+let g:vimspector_enable_mappings = 'HUMAN'
+let g:vimspector_sidebar_width = 10
+let g:vimspector_bottombar_height = 0
+let g:vimspector_base_dir=expand( '$HOME/.config/vimspector-config' )
+nnoremap <Leader>dd :call vimspector#Launch()<CR>
+nnoremap <Leader>de :call vimspector#Reset()<CR>
+nnoremap <Leader>dc :call vimspector#Continue()<CR>
+
+nnoremap <Leader>dt :call vimspector#ToggleBreakpoint()<CR>
+nnoremap <Leader>dT :call vimspector#ClearBreakpoints()<CR>
+
+nmap <Leader>dk <Plug>VimspectorRestart
+nmap <Leader>dh <Plug>VimspectorStepOut
+nmap <Leader>dl <Plug>VimspectorStepInto
+nmap <Leader>dj <Plug>VimspectorStepOver
