@@ -16,7 +16,7 @@
         "program": "${file}",
         "cwd": "${workspaceRoot}"
       },
-      "skipFiles": ["<node_internals>/**/*.js"]
+      "skipFiles": ["<node_internals>/**/*.js", "node_modules/**/*.js"]
     },
     "jest": {
       "adapter": "vscode-node",
@@ -40,7 +40,7 @@
           "${file}"
         ],
         "console": "integratedTerminal",
-        "skipFiles": ["<node_internals>/**/*.js"],
+        "skipFiles": ["<node_internals>/**/*.js", "node_modules/**/*.js"],
         "internalConsoleOptions": "neverOpen",
         "port": 9229
       }

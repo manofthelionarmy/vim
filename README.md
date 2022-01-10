@@ -42,3 +42,11 @@ This contains the mappings and settings realted to coc-nvim. Most of the setting
 
 This is the "centralized" place were we source all of the vim files.
 
+## TODO: follow this to learn how to setup debugging nodejs tests for vimspector 
+  https://dev.to/iggredible/debugging-in-vim-with-vimspector-4n0m
+  
+  Because the debugger we use is the vscode debugger, here's the configuration documentation:
+
+  https://code.visualstudio.com/docs/nodejs/nodejs-debugging
+
+  Also, makes googling for configurations easier, now we have to look for vscode configurations for js tests

@@ -1,0 +1,27 @@
+{
+  "go.goplsOptions": {
+    "completeUnimported": true,
+    "hoverKind": "SingleLine"
+  },
+  "go.goplsPath": "/home/armando/go/bin/gopls",
+  "coc.preferences.formatOnType": true,
+  "coc.preferences.formatOnSaveFiletypes": ["*"],
+  "yaml.schemas": {
+    "url": "globPattern",
+    "Kubernetes": "globPattern"
+  },
+  "diagnostic.displayByAle": true,
+  "coc.preferences.bracketEnterImprove": true,
+  "diagnostic.checkCurrentLine": false,
+  "diagnostic.virtualText": true,
+  "diagnostic.enable": true,
+  "suggest.enablePreselect": true,
+  "suggest.enablePreview": true,
+  "suggest.detailField": "preview",
+  "suggest.floatEnable": true,
+  "suggest.minTriggerInputLength": 2,
+  "hover.previewMaxHeight": 10,
+  "sql.database": "postgresql",
+  "sql.lintOnSave": true,
+  "sql.lintOnChange": false
+}
