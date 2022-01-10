@@ -31,7 +31,10 @@ Plug 'vim-airline/vim-airline'
 Plug 'ryanoasis/vim-devicons' "also used by NerdTree
 " -- Etc
 Plug 'kien/rainbow_parentheses.vim'
-Plug 'alvan/vim-closetag', {'for': ['javascript', 'markdown']}
+" Works great with one buffer, but fails if we have multiple buffers
+Plug 'alvan/vim-closetag', {'for': ['javascript', 'markdown', 'javascriptreact']}
+" Works great in multiple buffers, but doesn't play well with autocompletion
+" Plug 'docunext/closetag.vim', {'for': ['javascript', 'markdown', 'javascriptreact']}
 Plug 'mattn/emmet-vim', {'for': ['markdown']}
 Plug 'jiangmiao/auto-pairs'
 
