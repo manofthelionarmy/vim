@@ -32,7 +32,7 @@ set tabstop=2
 set shiftwidth=2
 set undofile
 set smartcase
-set signcolumn="yes:1"
+" set signcolumn="yes"
 
 " Airline
 let g:airline_powerline_fonts = 1
@@ -176,11 +176,6 @@ nnoremap <silent> <leader>tc :FZF ~/.vim/<CR>
 nnoremap <silent> <leader>tl :RG<CR>
 nnoremap <silent> <leader>tbb :Buffers<CR>
 nnoremap <silent> <leader>bt :BTags<CR>
-
-augroup lcd_to_path
-  autocmd!
-  autocmd BufEnter * silent! lcd %:h:p
-augroup END
 
 " Shift airline tabs
 nnoremap <silent> <S-l> :bnext<CR>
