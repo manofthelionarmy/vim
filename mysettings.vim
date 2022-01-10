@@ -147,8 +147,8 @@ nnoremap <C-n> :NERDTree<CR>
 nnoremap <silent> tn :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 " Commentary key bindings
-nnoremap \/ :Commentary<CR>
-vnoremap \/ :Commentary<CR>
+nnoremap <silent> <leader>/ :Commentary<CR>
+vnoremap <silent> <leader>/ :Commentary<CR>
 
 " VsCode stuff?
 vnoremap J :m '>+1<CR>gv=gv
