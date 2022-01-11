@@ -1,15 +1,16 @@
+"# vim:fileencoding=utf-8:foldmethod=marker
+"#: General Settings {{{
 set encoding=utf-8
 if has('termguicolors')
   set termguicolors
 endif
  
-" For dark version.
+"#: For dark version.
 set background=dark
 colorscheme gruvbox
-" Transparent background
+"#: Transparent background
 hi Normal guibg=NONE ctermbg=NONE
 
-" set number
 set number relativenumber
 set hlsearch
 set cursorline
@@ -32,9 +33,11 @@ set tabstop=2
 set shiftwidth=2
 set undofile
 set smartcase
+set foldmethod=marker
 " set signcolumn="yes"
+"#: }}}
 
-" Airline
+"#: Airline {{{
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#formatter = 'default'
 let g:airline#extensions#tabline#left_sep = ''
@@ -59,17 +62,17 @@ function! AirlineInit()
   " TODO: change these?
   " let g:airline_section_x = airline#section#create(['filetype'])
   " let g:airline_section_y = airline#section#create(['fileencoding', 'fileformat'])
-  " let g:airline_section_z = airline#section#create(['percentage%', 'linenumber', 'columnnumber'])
+  " let g:airline_section_z = airline#section#create(['percentage', 'linenr', 'columnnr'])
 endfunction
 
 augroup mycustom_ariline
   autocmd!
   autocmd User AirlineAfterInit call AirlineInit()
 augroup END
+"#: }}}
 
-let NERDTreeShowHidden=1
 
-"Rainbow Parenthesis
+"#: Rainbow Parenthesis {{{
 augroup toggling_rainbow_highlight
   autocmd!
   au VimEnter * RainbowParenthesesToggle
@@ -77,6 +80,9 @@ augroup toggling_rainbow_highlight
   au Syntax * RainbowParenthesesLoadSquare
   au Syntax * RainbowParenthesesLoadBraces
 augroup END
+"#: }}}
+
+" #: Vim-Go {{{
 " Some stuff to have to make sure that vim-go plays nice with coc-vim
 let g:go_def_mapping_enabled = 0
 let g:go_code_completion_enabled=0
@@ -95,8 +101,9 @@ let g:go_highlight_function_calls = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_variable_declarations = 1
 let g:go_highlight_variable_assignments = 1
+"#: }}}
 
-"Ale
+"#: Ale {{{
 let g:ale_lint_on_text_changed=0
 let g:ale_lint_on_insert_leave=1
 let g:ale_lint_on_enter=1
@@ -110,11 +117,13 @@ let g:ale_change_sign_column_color=0
 let g:ale_sign_error = ''
 let g:ale_sign_warning = ''
 let g:airline#extensions#ale#enabled = 1
+"#: }}}
+
 " Utils Snips is needed for our reacts snippets, and this prevents
 " UltiSnippets from screwing with our tab completion in coc
 " let g:UltiSnipsExpandTrigger= "<nop>"
 
-" Play nicely with TMUX
+"#: TMUX {{{
 let g:tmux_navigator_no_mappings = 1
 if exists('$TMUX')
   function! TmuxOrSplitSwitch(wincmd, tmuxdir)
@@ -140,12 +149,16 @@ else
   map <C-k> <C-w>k
   map <C-l> <C-w>l
 endif
+"#: }}}
 
-" NERDTree
+"#: NERDTree {{{
+let NERDTreeShowHidden=1
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <silent> tn :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
+"#: }}}
+
 " Commentary key bindings
 nnoremap <silent> <leader>/ :Commentary<CR>
 vnoremap <silent> <leader>/ :Commentary<CR>
@@ -245,7 +258,7 @@ let g:startify_lists = [
 " let g:indentLine_fileTypeExclude = ['startify']
 " let g:indentLine_setColors = 0
 
-" Vimspector
+"#: Vimspector {{{
 let g:vimspector_enable_mappings = 'HUMAN'
 let g:vimspector_sidebar_width = 10
 " let g:vimspector_bottombar_height = 0
@@ -264,6 +277,7 @@ nmap <Leader>dk <Plug>VimspectorRestart
 nmap <Leader>dh <Plug>VimspectorStepOut
 nmap <Leader>dl <Plug>VimspectorStepInto
 nmap <Leader>dj <Plug>VimspectorStepOver
+"#: }}}
 
 augroup EditVim
   autocmd!
@@ -271,14 +285,15 @@ augroup EditVim
   autocmd FileType vim setlocal foldmethod=marker
 augroup END
 
-"GitGutter
+"#: GitGutter {{{
 nnoremap <silent> <leader>g; :GitGutterPrevHunk<CR>
 nnoremap <silent> <leader>g, :GitGutterNextHunk<CR>
 nnoremap <silent> <leader>gu :GitGutterUndoHunk<CR>
-" Fold non-changes and show all of my current changes. Hit the keys again to
-" unfold
+" Fold non-changes and show all of my current changes. Hit the keys again to unfold
 nnoremap <silent> <leader>gf :GitGutterFold<CR>
+"#: }}}
 
+"#: Vim-Closetag {{{
 " Helps solve indeterministic flakiness
 " Super important, makes this work on the BufNewFile and Bufread events
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.js'
@@ -296,3 +311,4 @@ let g:closetag_regions = {
     \ }
 
 let g:closetag_shortcut = '>'
+"#: }}}
