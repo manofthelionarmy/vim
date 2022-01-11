@@ -224,10 +224,10 @@ function! s:gitUntracked()
 endfunction
 
 let g:startify_commands = [
-    \ [' Find File',':Files'],
-    \ [' Search',':Rg'],
-    \ [' Recently Used Files',':History'],
-    \ [' Configs',':FZF ~/.vim'],
+    \ ['🔍 Find File',':Files'],
+    \ ['🔭 Search',':Rg'],
+    \ ['📜 Recently Used Files',':History'],
+    \ ['🔩 Configs',':FZF ~/.vim'],
     \ ]
 
 let g:startify_lists = [
