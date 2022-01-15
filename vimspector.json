@@ -11,6 +11,7 @@
       "configuration": {
         "request": "launch",
         "protocol": "auto",
+        "type": "node",
         "stopOnEntry": true,
         "console": "integratedTerminal",
         "program": "${file}",

@@ -1,6 +1,7 @@
 "# vim:fileencoding=utf-8:foldmethod=marker
 "#: General Settings {{{
 set encoding=utf-8
+set fileencoding=utf-8
 if has('termguicolors')
   set termguicolors
 endif
@@ -49,6 +50,7 @@ let g:airline#extensions#hunks#hunk_symbols = [' ', '柳', ' ']
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_splits = 1
 let g:airline#extensions#obsession#enabled = 1
+let g:airline#extensions#branch#format = 2
 " Why? we get an error when we re-source/AirlineAfterInit, looks like we can only set this once
 " This conditional checks if airline is loaded. If it's not, set it
 if !exists('g:loaded_airline')
@@ -119,9 +121,12 @@ let g:ale_sign_warning = ''
 let g:airline#extensions#ale#enabled = 1
 "#: }}}
 
+" #: UltiSnippets {{{
 " Utils Snips is needed for our reacts snippets, and this prevents
 " UltiSnippets from screwing with our tab completion in coc
 " let g:UltiSnipsExpandTrigger= "<nop>"
+" #: }}}
+
 
 "#: TMUX {{{
 let g:tmux_navigator_no_mappings = 1
