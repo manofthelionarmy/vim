@@ -26,30 +26,45 @@
   "sql.lintOnChange": false,
   "suggest.completionItemKindLabels": {
     "keyword": " ",
-    "variable": " ",
+    "variable": " ",
     "value": " ",
     "operator": "",
     "constructor": " ",
     "function": " ",
     "reference": " ",
-    "constant": "ﲀ ",
-    "method": "ﬁ ",
-    "struct": " ",
+    "constant": " ",
+    "method": " ",
+    "struct": " ",
     "class": " ",
-    "interface": "ﰮ ",
+    "interface": " ",
     "text": " ",
     "enum": "練",
     "enumMember": " ",
-    "module": " ",
+    "module": " ",
     "color": " ",
-    "property": " ",
+    "property": "ﰠ ",
     "field": " ",
     "unit": "塞",
     "event": " ",
     "file": "",
     "folder": " ",
     "snippet": " ",
-    "typeParameter": " ",
-    "default": "\uf29c"
+    "typeParameter": " ",
+    "default": ""
+  },
+  "hover.floatConfig": {
+    "border": true,
+    "title": "🙈",
+    "maxHeight": 10,
+    "highlight": "GruvboxGreen"
+  },
+  "suggest.floatConfig": {
+    "border": true,
+    "highlight": "GruvboxGreen"
+  },
+  "signature.floatConfig": {
+    "border": true,
+    "title": "🙈",
+    "highlight": "GruvboxGreen"
   }
 }

@@ -166,6 +166,8 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+nnoremap <silent><leader>co :CocOutline<CR> 
 " Import so coc auto imports feature can work for go
 autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
 
+let g:coc_borderchars = ['─', '│', '─', '│', '╭', '╮', '╯', '╰']

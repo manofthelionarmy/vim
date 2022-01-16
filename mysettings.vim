@@ -51,6 +51,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_splits = 1
 let g:airline#extensions#obsession#enabled = 1
 let g:airline#extensions#branch#format = 2
+let g:airline_exclude_filetypes = ['vimfiler', 'nerdtree', 'coctree']
 " Why? we get an error when we re-source/AirlineAfterInit, looks like we can only set this once
 " This conditional checks if airline is loaded. If it's not, set it
 if !exists('g:loaded_airline')
