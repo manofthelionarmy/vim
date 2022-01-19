@@ -338,3 +338,4 @@ let g:closetag_shortcut = '>'
 
 " CocDiagnostics filetype is qf and I want to close it
 autocmd! FileType qf nnoremap <silent> <buffer> <Esc> :q<CR>
+" test
