@@ -4,8 +4,6 @@
     "hoverKind": "SingleLine"
   },
   "go.goplsPath": "/home/armando/go/bin/gopls",
-  "coc.preferences.formatOnType": true,
-  "coc.preferences.formatOnSaveFiletypes": ["*"],
   "yaml.schemas": {
     "url": "globPattern",
     "Kubernetes": "globPattern"
