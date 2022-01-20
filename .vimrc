@@ -1,3 +1,3 @@
-source ~/.vim/myplugins.vim
-source ~/.vim/mysettings.vim
-source ~/.vim/mycoc.vim
+source ~/.vim/plugins.vim
+source ~/.vim/settings.vim
+source ~/.vim/coc.vim

@@ -186,11 +186,12 @@ nnoremap <C-f> :NERDTreeFind<CR>
 nnoremap <silent> <leader>/ :Commentary<CR>
 vnoremap <silent> <leader>/ :Commentary<CR>
 
-" VsCode stuff?
+"# VsCode stuff? {{{
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
+"# }}}
 
-" FZF and RG :)
+"# FZF and RG :) {{{
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
 let $FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --layout reverse --margin=1,4 --preview 'bat --theme=TwoDark --color=always --style=header,grid --line-range :300 {}'"
 
@@ -212,20 +213,23 @@ nnoremap <silent> <leader>tc :FZF ~/.vim/<CR>
 nnoremap <silent> <leader>tl :RG<CR>
 nnoremap <silent> <leader>tbb :Buffers<CR>
 nnoremap <silent> <leader>bt :BTags<CR>
+"# }}}
 
-" Shift airline tabs
+"# Shift airline tabs {{{
 nnoremap <silent> <S-l> :bnext<CR>
 nnoremap <silent> <S-h> :bprev<CR>
+"# }}}
 
 " Close Buffers
 nnoremap <silent> <leader>c :bd<CR>
 
-" Keep cursorline at eye-level
+"# Keep cursorline at eye-level {{{
 nnoremap j jzz
 nnoremap k kzz
 nnoremap G Gzz
 nnoremap g; g;zz
 nnoremap g, g,zz
+"# }}}
 
 " Remap shift
 vnoremap > >gv
@@ -240,7 +244,7 @@ function! StartifyEntryFormat()
     return 'WebDevIconsGetFileTypeSymbol(absolute_path) ." ". entry_path'
 endfunction
 
-" Startify
+"# Startify: {{{
 let g:startify_custom_header_quotes = [
       \ ["Suckin' at something is the first step towards bein' sorta good at something", 
         \ "",  
@@ -274,12 +278,7 @@ let g:startify_lists = [
         \ { 'type': function('s:gitModified'),  'header': ['    Git Modified']},
         \ { 'type': function('s:gitUntracked'), 'header': ['    Git Untracked']},
         \]
-
-" not sure if it adds extra overhead on highlighting
-" let g:indentLine_char_list = ['┆', '▏']
-" " let g:indentLine_char_list = ['|', '¦', '┆', '┊']
-" let g:indentLine_fileTypeExclude = ['startify']
-" let g:indentLine_setColors = 0
+"# }}}
 
 "#: Vimspector {{{
 let g:vimspector_enable_mappings = 'HUMAN'
