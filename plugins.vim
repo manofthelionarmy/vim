@@ -10,6 +10,7 @@ source ~/.vim/plugins/ale.vim
 source ~/.vim/plugins/nerdtree.vim
 source ~/.vim/plugins/airline.vim
 source ~/.vim/plugins/closetag.vim
+source ~/.vim/plugins/autopairs.vim
 source ~/.vim/plugins/commentary.vim
 source ~/.vim/plugins/dracula.vim
 source ~/.vim/plugins/gitgutter.vim
