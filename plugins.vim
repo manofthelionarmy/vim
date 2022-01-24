@@ -1,58 +1,25 @@
-set nocompatible
+" Documentation says set this before we upload plugins
 let g:ale_disable_lsp = 1
 call plug#begin()
 " Plugin Manager
 Plug 'junegunn/vim-plug'
-" AutoCompletion
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'antoinemadec/FixCursorHold.nvim'
-" Git Plugin for Vim
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-sensible'
-" doesn't support lazy loading :(
-" Plug 'sheerun/vim-polyglot'
-Plug 'airblade/vim-gitgutter'
-Plug 'dense-analysis/ale'
-" Go 
-Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries', 'for': 'go', 'tag': 'v1.25'}
-
-" NerdTree and Plugins
-Plug 'preservim/nerdtree'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'Xuyuanp/nerdtree-git-plugin' "Git plugin for NerdTree
-" Tmux
-Plug 'christoomey/vim-tmux-navigator'
-" Color schemes
-Plug 'morhetz/gruvbox'
-" Appearance
-Plug 'vim-airline/vim-airline'
-"Dev icons (needs to be loaded after vim-arline and nerd tree)
-Plug 'ryanoasis/vim-devicons' "also used by NerdTree
-" -- Etc
-Plug 'kien/rainbow_parentheses.vim'
-" Works great with one buffer, but fails if we have multiple buffers
-Plug 'alvan/vim-closetag', {'for': ['javascript', 'markdown', 'javascriptreact']}
-" Works great in multiple buffers, but doesn't play well with autocompletion
-" Plug 'docunext/closetag.vim', {'for': ['javascript', 'markdown', 'javascriptreact']}
-Plug 'mattn/emmet-vim', {'for': ['markdown']}
-Plug 'jiangmiao/auto-pairs'
-
-" Javascript, JSX
-Plug 'yuezk/vim-js', {'for':['javascript', 'javascriptreact']}
-" Plug 'pangloss/vim-javascript', {'for':['javascript', 'javascriptreact']}
-Plug 'MaxMEllon/vim-jsx-pretty', {'for':['javascript', 'javascriptreact']}
-
-" Fzzy finder
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'mhinz/vim-startify'
-Plug 'puremourning/vimspector'
-" Airline already has this feature
-" Plug 'Yggdroot/indentLine'
-" Learn how to utilize sessions one day
-" Plug 'tpope/vim-obsession'
-" Debugging :)
-Plug 'puremourning/vimspector', {'for': ['javascript']}
+source ~/.vim/plugins/sensible.vim
+source ~/.vim/plugins/coc.vim
+source ~/.vim/plugins/vim-go.vim
+source ~/.vim/plugins/ale.vim
+source ~/.vim/plugins/nerdtree.vim
+source ~/.vim/plugins/airline.vim
+source ~/.vim/plugins/closetag.vim
+source ~/.vim/plugins/commentary.vim
+source ~/.vim/plugins/dracula.vim
+source ~/.vim/plugins/gitgutter.vim
+source ~/.vim/plugins/fugitive.vim
+source ~/.vim/plugins/rainbowbraces.vim
+source ~/.vim/plugins/tmux.vim
+source ~/.vim/plugins/js.vim
+source ~/.vim/plugins/fzf.vim
+source ~/.vim/plugins/startify.vim
+source ~/.vim/plugins/vimspector.vim
+source ~/.vim/plugins/devicons.vim
+source ~/.vim/plugins/fixcursorhold.vim
 call plug#end()
-

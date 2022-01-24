@@ -1,0 +1,1 @@
+Plug 'antoinemadec/FixCursorHold.nvim'

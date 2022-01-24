@@ -1,36 +1,23 @@
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 " Coc
-let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-go', 'coc-sh', 'coc-yaml', 'coc-snippets', 'coc-html', 'coc-css', "coc-ccls"]
-" Set internal encoding of vim, not needed on neovim, since coc.nvim using some
-" unicode characters in the file autoload/float.vim
-set encoding=utf-8
+let g:coc_global_extensions = [
+      \ 'coc-json', 
+      \ 'coc-tsserver',
+      \ 'coc-go',
+      \ 'coc-sh',
+      \ 'coc-yaml', 
+      \ 'coc-snippets', 
+      \ 'coc-html',
+      \ 'coc-css',
+      \ 'coc-ccls',
+      \ 'coc-java',
+      \ 'coc-vimlsp'
+      \ ]
 
-" TextEdit might fail if hidden is not set.
-set hidden
-
-" Some servers have issues with backup files, see #649.
-set nobackup
-set nowritebackup
-
-" Give more space for displaying messages.
-set cmdheight=2
-
-" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-" delays and poor user experience.
-set updatetime=300
-" Don't pass messages to |ins-completion-menu|.
-set shortmess+=c
-
-" Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved.
-if has("patch-8.1.1564")
-  " Recently vim can merge signcolumn and number column into one
-  set signcolumn=yes
-else
-  set signcolumn=yes
-endif
-
+set signcolumn=yes
 "!!!Important:  Hit esc twice when Coc gets stuck
-"nnoremap <silent> <ESC><ESC> :nohlsearch \| match none \| 2match none \| call coc#f
+nnoremap <silent> <ESC><ESC> :nohlsearch \| match none \| 2match none \| call coc#f
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
@@ -144,11 +131,6 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 " Add `:OR` command for organize imports of the current buffer.
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 
-" Add (Neo)Vim's native statusline support.
-" NOTE: Please see `:h coc-status` for integrations with external plugins that
-" provide custom statusline: lightline.vim, vim-airline.
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-
 " Mappings for CoCList
 " Show all diagnostics.
 nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
@@ -167,6 +149,7 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 nnoremap <silent><leader>co :CocOutline<CR> 
+
 " Import so coc auto imports feature can work for go
 autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
 

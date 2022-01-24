@@ -1,3 +1,7 @@
+" Plugins
 source ~/.vim/plugins.vim
+" General Settings
 source ~/.vim/settings.vim
-source ~/.vim/coc.vim
+
+" Keymappings
+source ~/.vim/keymappings.vim
