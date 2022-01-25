@@ -7,12 +7,11 @@ if has('termguicolors')
 endif
 
 set background=dark
-colorscheme dracula
-"#: Transparent background
+colorscheme onedark
 set number relativenumber
 set hlsearch
 set cursorline
-set autochdir
+" set autochdir
 set ignorecase
 set mouse=a
 set pumheight=10
@@ -32,7 +31,8 @@ set shiftwidth=2
 set undofile
 set undodir=/home/armando/.vim/undo
 set smartcase
-set foldmethod=marker
+set nolinebreak
+set noshowmode
 
 " TextEdit might fail if hidden is not set.
 set hidden

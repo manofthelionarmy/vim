@@ -19,14 +19,16 @@ let g:ale_set_loclist=1 " has all of the local errors :lopen, :lclose
 let g:ale_fix_on_save=1 "Let ale do the work for autoformatting, not coc
 " Make sure coc-eslint and coc-pretty are uninstalled
 let g:ale_linters={
-      \ 'javascript': ['prettier', 'eslint'],
-      \ 'go': ['gofmt', 'revive'] 
+      \ 'javascript': ['eslint'],
+      \ 'go': ['gofmt', 'revive'],
+      \ 'java': ['javac', 'checkstyle']
       \}
 let g:ale_go_golangci_lint_executable = 'golangci-lint'
 let g:ale_go_golangci_lint_options = '' " don't use the default
-
+let g:ale_java_checkstyle_config="/home/armando/.config/checkstyle/google_checks.xml"
 " Must have fixers installed, globally for golang, locally for javascript
 let g:ale_fixers = {
-      \ 'javascript': ['eslint'],
+      \ 'javascript': ['prettier'],
       \ 'go': ['gofumpt', 'gofmt', 'goimports'],
+      \ 'java': ['google_java_format']
       \}

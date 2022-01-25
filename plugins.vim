@@ -1,5 +1,6 @@
 " Documentation says set this before we upload plugins
 let g:ale_disable_lsp = 1
+set nocompatible
 call plug#begin()
 " Plugin Manager
 Plug 'junegunn/vim-plug'
@@ -12,7 +13,10 @@ source ~/.vim/plugins/airline.vim
 source ~/.vim/plugins/closetag.vim
 source ~/.vim/plugins/autopairs.vim
 source ~/.vim/plugins/commentary.vim
-source ~/.vim/plugins/dracula.vim
+source ~/.vim/plugins/polyglot.vim
+source ~/.vim/plugins/onedark.vim
+" source ~/.vim/plugins/dracula.vim
+" source ~/.vim/plugins/gruvbox.vim
 source ~/.vim/plugins/gitgutter.vim
 source ~/.vim/plugins/fugitive.vim
 source ~/.vim/plugins/rainbowbraces.vim

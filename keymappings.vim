@@ -60,3 +60,12 @@ nmap <Leader>dk <Plug>VimspectorRestart
 nmap <Leader>dh <Plug>VimspectorStepOut
 nmap <Leader>dl <Plug>VimspectorStepInto
 nmap <Leader>dj <Plug>VimspectorStepOver
+
+
+" GitGutter
+nnoremap <silent> <leader>g; :GitGutterPrevHunk<CR>
+nnoremap <silent> <leader>g, :GitGutterNextHunk<CR>
+nnoremap <silent> <leader>gu :GitGutterUndoHunk<CR>
+" Fold non-changes and show all of my current changes. Hit the keys again to unfold
+nnoremap <silent> <leader>gf :GitGutterFold<CR>
+nnoremap <silent> <leader>gs :GitGutterStageHunk<CR>

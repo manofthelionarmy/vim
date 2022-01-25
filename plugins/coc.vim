@@ -12,12 +12,13 @@ let g:coc_global_extensions = [
       \ 'coc-css',
       \ 'coc-ccls',
       \ 'coc-java',
-      \ 'coc-vimlsp'
+      \ 'coc-vimlsp',
+      \ 'coc-sql'
       \ ]
 
 set signcolumn=yes
 "!!!Important:  Hit esc twice when Coc gets stuck
-nnoremap <silent> <ESC><ESC> :nohlsearch \| match none \| 2match none \| call coc#f
+" nnoremap <silent> <ESC><ESC> :nohlsearch \| match none \| 2match none \| call coc#f
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
