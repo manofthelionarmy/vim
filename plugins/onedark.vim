@@ -5,5 +5,4 @@ augroup MyColors
   autocmd ColorScheme * hi Normal ctermbg=NONE guibg=NONE
         \ | hi goParamType ctermfg=12
         \ | hi goField ctermfg=3
-        \ | hi CursorLineNr ctermfg=12 cterm=bold
 augroup END

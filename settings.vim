@@ -11,7 +11,7 @@ colorscheme onedark
 set number relativenumber
 set hlsearch
 set cursorline
-" set autochdir
+set autochdir
 set ignorecase
 set mouse=a
 set pumheight=10
@@ -29,10 +29,11 @@ set numberwidth=4
 set tabstop=2
 set shiftwidth=2
 set undofile
-set undodir=/home/armando/.vim/undo
+set undodir=$HOME/.vim/undo
 set smartcase
 set nolinebreak
 set noshowmode
+set incsearch
 
 " TextEdit might fail if hidden is not set.
 set hidden
@@ -55,3 +56,10 @@ set signcolumn=yes
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
 " provide custom statusline: lightline.vim, vim-airline.
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
+" Looks like ale fixers fixes this if I include goimports
+" autocmd! BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
+autocmd! BufEnter *.hbs :set ft=html
+
+" CocDiagnostics filetype is qf and I want to close it
+autocmd! FileType qf nnoremap <silent> <buffer> <Esc> :q<CR>
