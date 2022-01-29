@@ -37,3 +37,30 @@ let g:startify_lists = [
         \ { 'type': function('s:gitModified'),  'header': ['    Git Modified']},
         \ { 'type': function('s:gitUntracked'), 'header': ['    Git Untracked']},
         \]
+
+" You can use &setting to access the value of a vim setting. See :help expr-option.
+
+" Here you can thus do:
+
+" if &guioptions =~# 'a'
+"    ....
+" endif
+
+" =~# in vimscript does case-sensitive regex matching.
+
+" Similarly, if you wanted to check if an option is not set,
+
+" if &guioptions !~# 'a'
+"    ....
+" endif
+
+" Don't want to keep setting it every time we leave a buffer
+function ToggleScrolloff()
+  if &scrolloff =~# '0' 
+    " documentation says this resets it to global value, which is 8 in my
+    " settings
+    setlocal scrolloff<
+  endif 
+endfunction
+
+autocmd FileType startify setlocal scrolloff=0 | autocmd BufLeave <buffer> call ToggleScrolloff()

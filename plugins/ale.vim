@@ -13,7 +13,6 @@ let g:ale_change_sign_column_color=0
 let g:ale_sign_error = ''
 let g:ale_sign_warning = ''
 let g:ale_sign_info = ''
-let g:airline#extensions#ale#enabled = 0
 let g:ale_set_quickfix = 1 " has all of the global errors, :copen, :cclose
 let g:ale_set_loclist=1 " has all of the local errors :lopen, :lclose
 let g:ale_fix_on_save=1 "Let ale do the work for autoformatting, not coc
@@ -30,5 +29,6 @@ let g:ale_java_checkstyle_config="/home/armando/.config/checkstyle/google_checks
 let g:ale_fixers = {
       \ 'javascript': ['prettier'],
       \ 'go': ['gofumpt', 'gofmt', 'goimports'],
-      \ 'java': ['google_java_format']
+      \ 'java': ['google_java_format'],
+      \ 'sql': ['pgformatter']
       \}

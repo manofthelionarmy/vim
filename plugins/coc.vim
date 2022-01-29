@@ -13,7 +13,8 @@ let g:coc_global_extensions = [
       \ 'coc-ccls',
       \ 'coc-java',
       \ 'coc-vimlsp',
-      \ 'coc-sql'
+      \ 'coc-sql',
+      \ 'coc-docker'
       \ ]
 
 set signcolumn=yes

@@ -62,4 +62,4 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 autocmd! BufEnter *.hbs :set ft=html
 
 " CocDiagnostics filetype is qf and I want to close it
-autocmd! FileType qf nnoremap <silent> <buffer> <Esc> :q<CR>
+autocmd! FileType qf,outline nnoremap <silent> <buffer> <Esc> :q<CR>
