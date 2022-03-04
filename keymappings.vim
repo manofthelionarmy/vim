@@ -21,7 +21,7 @@ nnoremap <silent> <S-l> :bnext<CR>
 nnoremap <silent> <S-h> :bprev<CR>
 
 " Close Buffers
-nnoremap <silent> <leader>c :bd<CR>
+nnoremap <silent> <leader>c :bd!<CR>
 
 " Keep cursorline at eye-level
 nnoremap j jzz
@@ -69,3 +69,6 @@ nnoremap <silent> <leader>gu :GitGutterUndoHunk<CR>
 " Fold non-changes and show all of my current changes. Hit the keys again to unfold
 nnoremap <silent> <leader>gf :GitGutterFold<CR>
 nnoremap <silent> <leader>gs :GitGutterStageHunk<CR>
+
+" Coc-Outline
+nnoremap <silent> <space>tb :CocOutline<CR>

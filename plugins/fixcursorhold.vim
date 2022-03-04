@@ -1,1 +1,1 @@
-Plug 'antoinemadec/FixCursorHold.nvim'
+" Plug 'antoinemadec/FixCursorHold.nvim'
