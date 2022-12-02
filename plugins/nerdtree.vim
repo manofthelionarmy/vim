@@ -11,8 +11,12 @@ let g:NERDTreeIgnore = ['^node_modules$',
       \ '^autoload$',
       \ '^undo$'
       \]
-let NERDTreeDirArrowCollapsible=''
-let NERDTreeDirArrowExpandable=''
+let g:WebDevIconsNerdTreeBeforeGlyphPadding = ''
+let g:WebDevIconsUnicodeDecorateFolderNodes = v:true
+" let NERDTreeDirArrowCollapsible=''
+" let NERDTreeDirArrowExpandable=''
+let g:NERDTreeDirArrowExpandable = "\u00a0"
+let g:NERDTreeDirArrowCollapsible = "\u00a0"
 let g:NERDTreeGitStatusUseNerdFonts = 1
 let g:NERDTreeGitStatusIndicatorMapCustom = {
                 \ 'Modified'  :'',

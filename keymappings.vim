@@ -10,15 +10,27 @@ vnoremap K :m '<-2<CR>gv=gv
 " FZF complete path, from https://github.com/junegunn/fzf.vim#mappings
 " Go to link under cursror with gx
 imap <C-x><C-f> <plug>(fzf-complete-path)
-nnoremap <silent> <leader>tt :FZF<CR>
+nnoremap <silent> <leader>tt :ProjectFiles<CR>
 nnoremap <silent> <leader>tc :FZF ~/.vim/<CR>
 nnoremap <silent> <leader>tl :RG<CR>
 nnoremap <silent> <leader>tbb :Buffers<CR>
 nnoremap <silent> <leader>bt :BTags<CR>
 
 " Shift airline tabs
-nnoremap <silent> <S-l> :bnext<CR>
-nnoremap <silent> <S-h> :bprev<CR>
+function! BNext() 
+  if &filetype != "nerdtree"
+    execute 'bnext'
+  endif
+endfunction
+
+function! BPrev() 
+  if &filetype != "nerdtree"
+    execute 'bprev'
+  endif
+endfunction
+
+nnoremap <silent> <S-l> :call BNext()<CR>
+nnoremap <silent> <S-h> :call BPrev()<CR>
 
 " Close Buffers
 nnoremap <silent> <leader>c :bd!<CR>

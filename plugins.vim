@@ -27,4 +27,5 @@ source ~/.vim/plugins/startify.vim
 source ~/.vim/plugins/vimspector.vim
 source ~/.vim/plugins/devicons.vim
 source ~/.vim/plugins/fixcursorhold.vim
+" source ~/.vim/plugins/leetcode.vim
 call plug#end()

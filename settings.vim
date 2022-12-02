@@ -20,6 +20,7 @@ set splitright
 set smartindent
 set noswapfile
 set scrolloff=8
+set clipboard=unnamedplus
 set sidescrolloff=8
 set expandtab
 set nocursorbind

@@ -3,24 +3,26 @@
     "completeUnimported": true,
     "hoverKind": "SingleLine"
   },
-  "go.goplsPath": "/home/armando/go/bin/gopls",
+  "go.goplsPath": "~/go/bin/gopls",
   "yaml.schemas": {
     "url": "globPattern",
     "Kubernetes": "globPattern"
   },
+  "notification.disabledProgressSources": ["*"],
   "diagnostic.displayByAle": true,
   "coc.preferences.bracketEnterImprove": true,
-  "diagnostic.checkCurrentLine": false,
+  "diagnostic.checkCurrentLine": true,
   "diagnostic.virtualText": true,
   "diagnostic.enable": true,
-  "suggest.enablePreselect": true,
-  "suggest.enablePreview": true,
+  "suggest.enablePreselect": false,
+  "suggest.enableFloat": true,
+  "suggest.virtualText": true,
+  "suggest.noselect": false,
   "suggest.detailField": "preview",
-  "suggest.floatEnable": true,
   "suggest.minTriggerInputLength": 2,
   "hover.previewMaxHeight": 10,
   "sql.database": "postgresql",
-  "sql.lintOnSave": true,
+  "sql.lintOnSave": false,
   "sql.lintOnChange": false,
   "suggest.completionItemKindLabels": {
     "keyword": " ",
@@ -52,17 +54,23 @@
   },
   "hover.floatConfig": {
     "border": true,
-    "title": "🙈",
-    "maxHeight": 10,
-    "highlight": "GruvboxGreen"
+    "title": " 🙈",
+    "winblend": 10,
+    "maxHeight": 10
   },
   "suggest.floatConfig": {
     "border": true,
-    "highlight": "GruvboxGreen"
+    "winblend": 10
   },
   "signature.floatConfig": {
     "border": true,
-    "title": "🙈",
-    "highlight": "GruvboxGreen"
+    "title": " 🙈",
+    "winblend": 10
+  },
+  "java.format.enabled": true,
+  "java.format.comments.enabled": true,
+  "java.format.onType.enabled": true,
+  "snippets.extends": {
+    "html": ["jet"]
   }
 }

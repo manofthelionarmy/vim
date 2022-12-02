@@ -6,7 +6,7 @@ let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
 let $FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --layout reverse --margin=1,4 --preview 'bat --theme=TwoDark --color=always --style=header,grid --line-range :300 {}'"
 
 function! RipgrepFzf(query, fullscreen)
-  let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case --glob "!node_modules/" -g "!vendors/" -g "!.git/" -- %s || true'
+  let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case --glob "!node_modules/" -g "!vendors/" -g "!.git/" -g "!build/" -- %s || true'
   let initial_command = printf(command_fmt, shellescape(a:query))
   let reload_command = printf(command_fmt, '{q}')
   let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
@@ -24,3 +24,8 @@ command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 " nnoremap <silent> <leader>tl :RG<CR>
 " nnoremap <silent> <leader>tbb :Buffers<CR>
 " nnoremap <silent> <leader>bt :BTags<CR>
+function! s:find_git_root()
+  return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
+endfunction
+
+command! ProjectFiles execute 'Files' s:find_git_root()
