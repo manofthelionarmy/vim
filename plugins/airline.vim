@@ -10,6 +10,7 @@ let g:airline#extensions#tabline#left_alt_sep = '▎'
 " let g:airline_left_sep=''
 let g:airline_left_sep=''
 let g:airline_right_sep=''
+" very important, if this isn't set, we can't override fileformat
 let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#hunks#enabled=1
@@ -28,32 +29,48 @@ if !exists('g:loaded_airline')
   let g:airline_symbols = {'branch': ' ', 'dirty': '', 'notexists': ''}
 endif
 
-" let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#ale#enabled = 1
 
-" let g:airline#extensions#default#layout = [
-"     \ [ 'a', 'b', 'c' ],
-"     \ [ 'x' ],
-"     \ ]
+let airline#extensions#ale#error_symbol = ' '
+let airline#extensions#ale#warning_symbol = ' '
+
+let airline#extensions#ale#show_line_numbers = 0
+" let airline#extensions#ale#open_lnum_symbol = '(L'
+" let airline#extensions#ale#close_lnum_symbol = ')'
+
+let g:airline#extensions#default#layout = [
+    \ [ 'a', 'b', 'c' ],
+    \ [ 'error', 'warning', 'x', 'y', 'z' ],
+    \ ]
 function! Scrollbar() abort
     if winwidth(0) <= 50
       return ''
     endif
     let current_line = line(".") 
-    let total_lines = line("$") / 1.0
+    " documentation says we convert a number to float via coercion
+    let total_lines = line("$") * 1.0
     let chars = [ "__", "▁▁", "▂▂", "▃▃", "▄▄", "▅▅", "▆▆", "▇▇", "██" ]
     let line_ratio = current_line / total_lines
-    " not updating properly
+    " convert the float to number
     let index = float2nr(ceil(line_ratio * len(chars)))
+    " the index maybe equal to len(chars), return the last element
     if index == len(chars) 
       return chars[index-1]
     endif
     return chars[index]
 endfunction
 
+function! Custom_Hunks_StatusLine()
+  if winwidth(0) <= 50
+    return ''
+  endif
+  return airline#extensions#hunks#get_hunks()
+endfunction
+
 function! AirlineInit()
   let g:airline_section_a = airline#section#create(['mode'])
   let g:airline_section_b = airline#section#create_left(['branch','%t'])
-  let g:airline_section_c = airline#section#create(['%{airline#extensions#hunks#get_hunks()}'])
+  let g:airline_section_c = airline#section#create(['%{Custom_Hunks_StatusLine()}'])
   let g:airline_section_x = airline#section#create_left(['filetype'])
   " can't change section y
   let g:airline_section_y = '%{printf(" ")}'
