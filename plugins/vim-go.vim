@@ -1,4 +1,4 @@
-Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries', 'for': 'go', 'tag': 'v1.25'}
+Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries', 'for': 'go', 'tag': 'v1.28'}
 
 " Some stuff to have to make sure that vim-go plays nice with coc-vim
 let g:go_def_mapping_enabled = 0

@@ -61,6 +61,15 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 " Looks like ale fixers fixes this if I include goimports
 " autocmd! BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
 autocmd! BufEnter *.hbs :set ft=html
+autocmd! BufEnter *.jet :set ft=html
+autocmd! BufEnter *.gohtml :set ft=html
+autocmd! BufEnter *.tmpl :set ft=html
 
 " CocDiagnostics filetype is qf and I want to close it
 autocmd! FileType qf,outline nnoremap <silent> <buffer> <Esc> :q<CR>
+" augroup Dashboard
+"   autocmd!
+"   au FileType startify set showtabline=0 | setlocal scrolloff=0 |
+"         \ autocmd WinLeave <buffer> set showtabline=2 |
+"         \ autocmd WinLeave <buffer> setlocal scrolloff=-1
+" augroup END

@@ -4,12 +4,19 @@ function! StartifyEntryFormat()
     return 'WebDevIconsGetFileTypeSymbol(absolute_path) ." ". entry_path'
 endfunction
 
-let g:startify_custom_header_quotes = [
-      \ ["Suckin' at something is the first step towards bein' sorta good at something", 
-        \ "",  
-        \ "- Jake the Dog, Adventure Time"
-        \],
+let g:startify_fortune_use_unicode = 1
+let g:startify_padding_left = 10
+
+let g:my_header = [
+      \ "    Suckin' at something",
+      \ "  is the first step towards",
+      \ "bein sorta good at something", 
+      \ "",  
+      \ "- Jake the Dog, Adventure Time",
+      \ "",
       \ ]
+
+let g:startify_custom_header = 'startify#center(g:my_header)'
 
 function! s:gitModified()
     let files = systemlist('git ls-files -m 2>/dev/null')
@@ -63,4 +70,5 @@ function ToggleScrolloff()
   endif 
 endfunction
 
-autocmd FileType startify setlocal scrolloff=0 | autocmd BufLeave <buffer> call ToggleScrolloff()
+autocmd User StartifyReady setlocal scrolloff=0 | setlocal lazyredraw!
+      \| autocmd BufLeave <buffer> call ToggleScrolloff()

@@ -12,8 +12,9 @@ vnoremap K :m '<-2<CR>gv=gv
 imap <C-x><C-f> <plug>(fzf-complete-path)
 nnoremap <silent> <leader>tt :ProjectFiles<CR>
 nnoremap <silent> <leader>tc :FZF ~/.vim/<CR>
+nnoremap <silent> <space>td :FZF .<CR>
 nnoremap <silent> <leader>tl :RG<CR>
-nnoremap <silent> <leader>tbb :Buffers<CR>
+nnoremap <silent> <space>t` :Buffers<CR>
 nnoremap <silent> <leader>bt :BTags<CR>
 
 " Shift airline tabs
@@ -83,4 +84,7 @@ nnoremap <silent> <leader>gf :GitGutterFold<CR>
 nnoremap <silent> <leader>gs :GitGutterStageHunk<CR>
 
 " Coc-Outline
-nnoremap <silent> <space>tb :CocOutline<CR>
+" nnoremap <silent> <space>tb :CocOutline<CR>
+
+inoremap <silent><expr> <C-j> coc#pum#visible() ? coc#pum#next(1) : "\<C-j>"
+inoremap <silent><expr> <C-k> coc#pum#visible() ? coc#pum#prev(1) : "\<C-k>"

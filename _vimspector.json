@@ -44,7 +44,7 @@
         "internalConsoleOptions": "neverOpen",
         "port": 9229
       }
-    }, // culprit below: ohhh, it was defaulting to this
+    },
     "attach": {
       "adapter": "vscode-node",
       "default": true,

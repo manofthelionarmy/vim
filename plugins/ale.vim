@@ -1,4 +1,4 @@
-Plug 'dense-analysis/ale'
+Plug 'dense-analysis/ale', {'tag': 'v3.3.0'}
 
 let g:ale_lint_on_text_changed=0
 let g:ale_lint_on_insert_leave=1
