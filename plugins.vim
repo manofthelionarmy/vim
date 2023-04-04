@@ -14,13 +14,13 @@ source ~/.vim/plugins/closetag.vim
 source ~/.vim/plugins/autopairs.vim
 source ~/.vim/plugins/commentary.vim
 source ~/.vim/plugins/polyglot.vim
-source ~/.vim/plugins/onedark.vim
-source ~/.vim/plugins/catppucin.vim
-" source ~/.vim/plugins/dracula.vim
-source ~/.vim/plugins/gruvbox.vim
+" source ~/.vim/plugins/onedark.vim
+" source ~/.vim/plugins/catppucin.vim
+source ~/.vim/plugins/dracula.vim
+" source ~/.vim/plugins/gruvbox.vim
 source ~/.vim/plugins/gitgutter.vim
 source ~/.vim/plugins/fugitive.vim
-source ~/.vim/plugins/rainbowbraces.vim
+" source ~/.vim/plugins/rainbowbraces.vim
 source ~/.vim/plugins/tmux.vim
 source ~/.vim/plugins/js.vim
 source ~/.vim/plugins/fzf.vim
@@ -28,5 +28,5 @@ source ~/.vim/plugins/startify.vim
 source ~/.vim/plugins/vimspector.vim
 source ~/.vim/plugins/devicons.vim
 source ~/.vim/plugins/fixcursorhold.vim
-" source ~/.vim/plugins/leetcode.vim
+source ~/.vim/plugins/emmet.vim
 call plug#end()

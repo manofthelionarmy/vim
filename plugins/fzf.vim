@@ -1,15 +1,18 @@
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 " Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/rpc' }
-
+" Only works if we do set the preview window
+let g:fzf_preview_window = ['right:hidden', 'ctrl-/']
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
-let $FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --layout reverse --margin=1,4 --preview 'bat --theme=Gruvbox --color=always --style=header,grid --line-range :300 {}'"
+" TODO: figure out a way to set this
+let s:preview = "--preview-window 'right:60%' --preview 'bat --theme=Gruvbox --color=always --style=header,grid --line-range :300 {}'"
+let $FZF_DEFAULT_OPTS="--ansi --layout reverse --margin=1,4 --prompt='🔭 '"
 
 function! RipgrepFzf(query, fullscreen)
   let command_fmt = 'rg --column --line-number --no-heading --smart-case --glob "!node_modules/" -g "!vendors/" -g "!.git/" -g "!build/" -- %s || true'
   let initial_command = printf(command_fmt, shellescape(a:query))
   let reload_command = printf(command_fmt, '{q}')
-  let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+  let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command, s:preview]}
   call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
 endfunction
 

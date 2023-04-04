@@ -32,3 +32,4 @@ let g:ale_fixers = {
       \ 'java': ['google_java_format'],
       \ 'sql': ['pgformatter']
       \}
+" Maybe better to keep the highlight in here than across all colorschemes

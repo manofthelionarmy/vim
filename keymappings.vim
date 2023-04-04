@@ -13,7 +13,7 @@ imap <C-x><C-f> <plug>(fzf-complete-path)
 nnoremap <silent> <leader>tt :ProjectFiles<CR>
 nnoremap <silent> <leader>tc :FZF ~/.vim/<CR>
 nnoremap <silent> <space>td :FZF .<CR>
-nnoremap <silent> <leader>tl :RG<CR>
+nnoremap <silent> <space>tl :Rg<CR>
 nnoremap <silent> <space>t` :Buffers<CR>
 nnoremap <silent> <leader>bt :BTags<CR>
 

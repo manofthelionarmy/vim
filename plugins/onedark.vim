@@ -10,4 +10,5 @@ autocmd ColorScheme * augroup MyColors
         \ | hi WarningMsg gui=undercurl cterm=undercurl
         \ | hi AleWarningLine gui=undercurl,bold guifg=orange cterm=undercurl,bold guifg=orange
         \ | hi AleVirtualTextWarning gui=undercurl,bold guifg=orange cterm=undercurl,bold guifg=orange
+        \ | hi AleVirtualTextError gui=undercurl,bold guifg=red
 augroup END

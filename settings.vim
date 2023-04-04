@@ -7,7 +7,7 @@ if has('termguicolors')
 endif
 
 set background=dark
-colorscheme onedark
+colorscheme dracula
 set number relativenumber
 set hlsearch
 set cursorline
