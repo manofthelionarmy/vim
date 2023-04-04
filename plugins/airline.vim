@@ -80,7 +80,7 @@ function! CustomLineNr()
   endif
   " coerce the type to float
   let total_lines = line("$") * 1.0
-  let percent = float2nr(ceil((curr / total_lines) * 100.0))
+  let percent = float2nr(floor((curr / total_lines) * 100.0))
   if percent / 10 == 0 
     " add some padding
     return ' '.percent.'% '
