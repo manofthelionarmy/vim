@@ -14,7 +14,8 @@ let g:coc_global_extensions = [
       \ 'coc-java',
       \ 'coc-vimlsp',
       \ 'coc-sql',
-      \ 'coc-docker'
+      \ 'coc-docker',
+      \ 'coc-emmet',
       \ ]
 
 " Always show the signcolumn, otherwise it would shift the text each time
@@ -101,7 +102,7 @@ nmap <leader>ac  <Plug>(coc-codeaction)
 nmap <leader>qf  <Plug>(coc-fix-current)
 
 " Run the Code Lens action on the current line.
-nmap <leader>cl  <Plug>(coc-codelens-action)
+nmap <leader>ll  <Plug>(coc-codelens-action)<CR>
 
 " Map function and class text objects
 " NOTE: Requires 'textDocument.documentSymbol' support from the language server.

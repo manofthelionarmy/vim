@@ -3,6 +3,7 @@ augroup MyColors
   autocmd!
   " TODO
   autocmd ColorScheme * hi Comment gui=bold,italic cterm=bold,italic
+        \ | hi Normal guibg=NONE ctermbg=NONE
         \ | hi Type ctermfg=117 guifg=#8BE9FD
         \ | hi goParamType ctermfg=12
         \ | hi goField ctermfg=180

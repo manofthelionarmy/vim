@@ -14,7 +14,7 @@ let g:airline_right_sep=''
 let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#hunks#enabled=1
-let g:airline#extensions#hunks#hunk_symbols = [' ', '柳', ' ']
+let g:airline#extensions#hunks#hunk_symbols = [' ', ' ', ' ']
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_splits = 1
 let g:airline#extensions#obsession#enabled = 1
@@ -86,6 +86,13 @@ function! CustomLineNr()
     return ' '.percent.'% '
   endif
   return percent.'% '
+endfunction
+
+function! CustomBranch()
+  if winwidth(0) <= 50
+    return ''
+  endif
+  return airline#extensions#branch#head().' '
 endfunction
 
 

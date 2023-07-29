@@ -12,7 +12,7 @@
   "diagnostic.displayByAle": true,
   "coc.preferences.bracketEnterImprove": true,
   "diagnostic.checkCurrentLine": true,
-  "diagnostic.virtualText": true,
+  "diagnostic.virtualText": false,
   "diagnostic.enable": true,
   "suggest.enablePreselect": false,
   "suggest.enableFloat": true,
