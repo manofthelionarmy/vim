@@ -112,7 +112,7 @@ function! AirlineInit()
   let g:airline_section_c = airline#section#create(['%{Custom_Hunks_StatusLine()}'])
   " let g:airline_section_x = airline#section#create(['%{Custom_FileType()}', '%{printf("%s", "  ")}'])
   let g:airline_section_x = airline#section#create([])
-  let g:airline_section_y = airline#section#create(['%{printf("%s%s ","󰌽 ", "  ")}', '%{Custom_FileType()}'])
+  let g:airline_section_y = airline#section#create(['%{printf("%s%s "," ", "  ")}', '%{Custom_FileType()}'])
   " can't change section y
   " let g:airline_section_y = '%{printf(" ")}'
   " it's not always redrawing
