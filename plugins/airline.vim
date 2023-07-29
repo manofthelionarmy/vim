@@ -10,6 +10,7 @@ let g:airline#extensions#tabline#left_alt_sep = '▎'
 " let g:airline_left_sep=''
 let g:airline_left_sep=''
 let g:airline_right_sep=''
+" let g:airline_left_alt_sep = ''
 " very important, if this isn't set, we can't override fileformat
 let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
 let g:airline#extensions#whitespace#enabled = 0
@@ -88,21 +89,32 @@ function! CustomLineNr()
   return percent.'% '
 endfunction
 
-function! CustomBranch()
+function! Custom_Branch()
   if winwidth(0) <= 50
     return ''
   endif
-  return airline#extensions#branch#head().' '
+  let head = airline#extensions#branch#get_head()
+  if head == ''
+    return head
+  endif
+  return head.' '
+endfunction
+
+function! Custom_FileType() 
+  let icon = WebDevIconsGetFileTypeSymbol().airline#parts#filetype()
+  return ' '.icon
 endfunction
 
 
 function! AirlineInit()
   let g:airline_section_a = airline#section#create(['mode'])
-  let g:airline_section_b = airline#section#create_left(['branch','%t'])
+  let g:airline_section_b = airline#section#create(['%{Custom_Branch()}','%t'])
   let g:airline_section_c = airline#section#create(['%{Custom_Hunks_StatusLine()}'])
-  let g:airline_section_x = airline#section#create_left(['filetype'])
+  " let g:airline_section_x = airline#section#create(['%{Custom_FileType()}', '%{printf("%s", "  ")}'])
+  let g:airline_section_x = airline#section#create([])
+  let g:airline_section_y = airline#section#create(['%{printf("%s%s ","󰌽 ", "  ")}', '%{Custom_FileType()}'])
   " can't change section y
-  let g:airline_section_y = '%{printf(" ")}'
+  " let g:airline_section_y = '%{printf(" ")}'
   " it's not always redrawing
   let g:airline_section_z = airline#section#create(['%{CustomLineNr()}','%{Scrollbar()}' ])
   " let g:airline_section_a = airline#section#create(['mode', ' ', 'foo'])

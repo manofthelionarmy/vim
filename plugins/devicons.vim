@@ -4,6 +4,7 @@ let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {} " needed
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['jet'] = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['gohtml'] = ''
 let g:DevIconsAppendArtifactFix=1
+let g:webdevicons_enable_airline_statusline = 0
 " if !exists('g:syntax_on')
 " 	syntax enable
 " endif
